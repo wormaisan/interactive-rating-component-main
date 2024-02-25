@@ -1,0 +1,271 @@
+@font-face {
+  font-family: "overpass";
+  src: url("../fonts/Overpass-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "overpass";
+  src: url("../fonts/Overpass-Bold.ttf");
+  font-weight: 700;
+}
+
+
+:root {
+  /*primary*/
+  --orange: hsl(25, 97%, 53%);
+
+  /*neutral*/
+  --white: hsl(0, 0%, 100%);
+  --lightGrey: hsl(217, 12%, 63%);
+  --mediumGrey: hsl(216, 12%, 54%);
+  --darkBlue: hsl(213, 19%, 18%);
+  --darkedBlue: #1E252F;
+  --veryDarkBlue: hsl(216, 12%, 8%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: overpass, sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blockTitle {
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.blockText {
+  color: var(--lightGrey);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.card {
+  background-color: var(--veryDarkBlue);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.card__body {
+  padding: 33px;
+  border-radius: 30px;
+  background-color: var(--darkedBlue);
+  max-width: 412px;
+  margin: 0 auto;
+}
+
+.card__icon {
+  border-radius: 50%;
+  background-color: var(--darkBlue);
+  margin-bottom: 32px;
+  width: 47px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__icon svg {
+  fill: #FC7614;
+}
+
+.card__title {
+  margin-bottom: 10px;
+}
+
+.card__text {
+  margin-bottom: 26px;
+}
+
+.card__rating {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(1, 1fr);
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.card__rating label {
+  background-color: var(--darkBlue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mediumGrey);
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.card__rating label:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.card__rating input:checked + label {
+  background-color: var(--mediumGrey);
+  color: var(--white);
+}
+
+.card__btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  padding: 13px;
+  background-color: var(--orange);
+  color: var(--white);
+  text-transform: uppercase;
+  width: 100%;
+  letter-spacing: 0.2em;
+  font-family: overpass, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.card__btn:hover {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.thank {
+  background-color: var(--veryDarkBlue);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.thank__body {
+  padding: 46px 36px;
+  border-radius: 30px;
+  background-color: var(--darkedBlue);
+  max-width: 412px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.thank__img {
+  margin-bottom: 25px;
+  width: 162px;
+  height: 108px;
+}
+
+.thank__rating {
+  color: var(--orange);
+  margin-bottom: 33px;
+  border-radius: 30px;
+  padding: 6px 21px;
+  background-color: var(--darkBlue);
+}
+
+.thank__title {
+  margin-bottom: 11px;
+}
+
+.thank__text {
+  text-align: center;
+}
+
+.blockHide {
+  display: none;
+}
+
+.footer {
+  padding: 20px;
+}
+
+
+@media (max-width: 375px) {
+
+  .blockTitle {
+    font-size: 24px;
+  }
+
+  .blockText {
+    font-size: 14px;
+  }
+
+  .card__body {
+    padding: 25px;
+    border-radius: 17px;
+  }
+
+  .card__icon {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 19px;
+  }
+
+  .card__rating {
+    grid-template-columns: repeat(5, 42px);
+    margin-bottom: 24px;
+  }
+
+  .card__rating label {
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .card__btn {
+    font-size: 14px;
+  }
+
+  .thank__body {
+    border-radius: 17px;
+    padding: 36px 30px;
+  }
+
+  .thank__img {
+    width: 142px;
+    height: 96px;
+  }
+
+  .thank__rating {
+    margin-bottom: 29px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+}
